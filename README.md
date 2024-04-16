@@ -32,7 +32,7 @@ Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.i
 - **Score Tracking**: Scores are updated in real-time as users select their answers.
 - **End-of-Quiz Feedback**: Users receive feedback on their performance at the end of the quiz with options to retry or exit.
 
-![Quiz Interaction](assets/images/Quiz-Interaction.jpg)
+![Quiz Interaction](assets/images/Quiz-Interaction.png)
 ![Quiz Questions](assets/images/Quiz-Questions.png)
 ![Quiz Results](assets/images/Quiz-Results.png)    
 
