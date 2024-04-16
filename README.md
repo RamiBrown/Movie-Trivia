@@ -6,7 +6,7 @@ Welcome to the Movie Trivia Website, inspired by a love for films and quizzes. T
 
 Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.io/Movie-Trivia/).
 
-[Responsive Application Screenshot](https://ui.dev/amiresponsive?url=https://ramibrown.github.io/Movie-Trivia/)
+![Responsive Application](assets\images\Application.png)
 
 ## Technologies Used
 
@@ -32,7 +32,10 @@ Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.i
 - **Score Tracking**: Scores are updated in real-time as users select their answers.
 - **End-of-Quiz Feedback**: Users receive feedback on their performance at the end of the quiz with options to retry or exit.
 
-![Quiz Interaction](../assets/images/Quiz-interaction.jpg)
+![Quiz Interaction](assets\images\Quiz-Interaction.jpg)
+![Quiz Questions](assets\images\Quiz-Questions.png)
+![Quiz Results](assets\images\Quiz-Results.png)    
+
 
 
 ### Color Palette
@@ -45,6 +48,16 @@ Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.i
 
 ## Testing
 
+- **HTML Validator**: Used to ensure code quality and standards.
+![HTML Validator](assets\images\HTML-Validator.jpg)
+
+- **CSS Validator**: Used to check for any CSS issues.
+![CSS Validator](assets\images\CSS-Validator.jpg)
+
+- **Lighthouse report**
+
+![Lighthouse Report](assets\images\ighthouse-Report.jpg)
+![Lighthouse Report](assets\images\ighthouse-Report2.png)
 - Peer Code Review through GitHub to gather feedback and make improvements.
 - Functional testing was conducted by friends and family to ensure the quiz works seamlessly on various devices and browsers.
 
@@ -58,7 +71,7 @@ Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.i
 
 ## Credits
 
-- **Community Forums**: Valuable insights were gained from discussions on Stack Overflow and MDN Web Docs.
+- **Community Forums**: Valuable insights were gained from discussions on Stack Overflow.
 
 ## Future Enhancements
 
