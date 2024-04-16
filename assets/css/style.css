@@ -1,8 +1,10 @@
+/* Root Variables: Define primary and text colors for easy theme management */
 :root {
-    --accent-color: #e50914; /* Netflix red for a cinematic feel */
+    --accent-color: #e50914;
     --text-color: #fff; 
 }
 
+/* Global Styles: Applies a universal box model and default margin and padding */
 * {
     margin: 10px;
     padding: 5px;
@@ -10,37 +12,38 @@
     box-sizing: border-box;
 }
 
-
+/* Body Styling: Sets up font, background, and basic layout properties */
 body {
     font-family: 'Arial', sans-serif;
     background: url("../images/backgruond.jpg") no-repeat center center/cover;
     position: relative;
     display: block;
-    flex-direction: column;
+    flex-direction: column; /* Note: 'flex-direction' will not apply without 'display: flex' */
 }
 
+/* Reset Button Style: Fixes button's position on the screen */
 #resetButton {
     position: fixed;
     top: 25px; 
     right: 25px;
     padding: 1%;
     z-index: 10;
-
 }
 
-
+/* Common Container Styling: Applies to header, section, and footer */
 header, section, footer {
     padding: 10px;
     text-align: center;
-    background-color: rgba(221, 206, 206, 0.8); /* Slight transparency to make text more readable */
+    background-color: rgba(221, 206, 206, 0.8);
 }
 
+/* Link Styling: Ensures all links have consistent text decoration and color */
 a {
     text-decoration: none;
     color: var(--text-color);
 }
 
-
+/* Button Styling: Sets the appearance of all buttons */
 button {
     font-size: 1.5em;
     border-radius: 222px;
@@ -51,20 +54,20 @@ button {
     border: none;
 }
 
+/* Visibility Classes: Controls display properties for hiding or showing elements */
 .hidden {
     display: none;
 }
 
 .visible {
-    display: block; 
-      }
+    display: block;
+}
 
-/* media queries */
-
+/* Media Queries for Responsiveness: Adjust font sizes and layout for smaller screens */
 @media screen and (max-width: 576px) {
     #heading {
         font-size: 1.85em;
-        }
+    }
 
     h2 {
         font-size: 1.3em;
@@ -72,21 +75,16 @@ button {
     
     .instructions {
         font-size: 2em;
-        }
-
+    }
 }
 
-/* Responsive Design */
-
+/* Further Responsive Adjustments for very small screens */
 @media screen and (max-width: 320px) {
-
-    #heading,
-    h2 {
+    #heading, h2 {
         font-size: 1.4em;
     }
 
-    .instructions,
-    #copyright {
+    .instructions, #copyright {
         font-size: 0.9em;
     }
 
@@ -98,11 +96,11 @@ button {
     #question {
         font-size: 1.3em;
     }
-
 }
 
+/* Smallest Screen Adjustments */
 @media screen and (max-width: 280px) {
     h2 {
-        font-size: 1.15em
+        font-size: 1.15em;
     }
 }
