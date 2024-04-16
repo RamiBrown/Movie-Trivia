@@ -25,19 +25,18 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
-    margin: 0; 
+    min-height: 100vh 
 }
+
 /* Main content wrapper */
 .main-content {
-    position: relative;
+    position: fixed;
     flex: 1;
     padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: rgba(224, 223, 231, 0.8);
     border-radius: 10px;
-    
 }
 
 
@@ -47,18 +46,24 @@ ul, ol {
 
 /* Reset Button Style: Fixes button's position on the screen */
 #resetButton {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    padding: 1%;
-    z-index: 10;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: var(--accent-color);
+    color: rgb(246, 243, 243);
+    border: none;
+    border-radius: 222px;
+    
 }
 
 /* Common Container Styling: Applies to header, section, and footer */
 header, section, footer {
     position: relative;
     padding: 10px;
-    margin: 30px;
+    margin: 13px;
     background-color: rgba(224, 223, 231, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 5px 5px rgba(32, 57, 65, 0.8);
@@ -68,7 +73,13 @@ header, section, footer {
 
 /* Footer specific styling */
 footer {
-    margin-top: auto; /* Pushes the footer to the bottom */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(224, 223, 231, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(32, 57, 65, 0.8);
 }
 
 /* Link Styling: Ensures all links have consistent text decoration and color */
