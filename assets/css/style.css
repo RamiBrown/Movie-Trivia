@@ -6,7 +6,7 @@
 
 /* Global Styles: Applies a universal box model and default margin and padding */
 * {
-    margin: 10px;
+    margin: 0; 
     padding: 5px;
     border: none;
     box-sizing: border-box;
@@ -14,25 +14,41 @@
 
 /* Body Styling: Sets up font, background, and basic layout properties */
 body {
-    
-    font-family: 'Montserrat' , sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.3em;
     color: var(--text-color);
-    background: url("../images/backgruond.jpg") no-repeat center center/cover;
+    background: url("../images/background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 100vh; 
+    margin: 0; 
+}
+/* Main content wrapper */
+.main-content {
+    position: relative;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgba(224, 223, 231, 0.8);
+    border-radius: 10px;
+    
 }
 
-ul,
-ol {
+
+ul, ol {
     list-style-type: none;
 }
 
 /* Reset Button Style: Fixes button's position on the screen */
 #resetButton {
     position: fixed;
-    top: 25px; 
+    top: 25px;
     right: 25px;
     padding: 1%;
     z-index: 10;
@@ -40,9 +56,19 @@ ol {
 
 /* Common Container Styling: Applies to header, section, and footer */
 header, section, footer {
+    position: relative;
     padding: 10px;
+    margin: 30px;
+    background-color: rgba(224, 223, 231, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(32, 57, 65, 0.8);
     text-align: center;
-    background-color: rgba(210, 216, 218, 0.8);
+    
+}
+
+/* Footer specific styling */
+footer {
+    margin-top: auto; /* Pushes the footer to the bottom */
 }
 
 /* Link Styling: Ensures all links have consistent text decoration and color */
