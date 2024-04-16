@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>Movies Trivia</title>
 </head>
 <body>
@@ -21,6 +22,7 @@
     <main>
         <!-- Start Area: Displays the introductory text and start button -->
         <section id="startArea">
+            <h2>Welcome to the Movie Trivia Challenge</h2>
             <ol class="instructions">
                 <li>Click start when you're ready</li>
                 <li>Answer the following Movies questions</li>
@@ -34,6 +36,7 @@
 
         <!-- Game Area: Hidden by default; shows questions and answers during the quiz -->
         <section id="gameArea" class="hidden">
+            <h2>Quiz Questions</h2>
             <div id="question"></div>
             <div class="center-answer">
                 <button id="answer0" onclick="submitAnswer(0);"></button>
@@ -46,6 +49,7 @@
 
         <!-- End Game Div: Hidden by default; shows results and options to replay or exit after the quiz ends -->
         <section id="endGameDiv" class="hidden">
+            <h2>Quiz Results</h2>
             <p>Awesome work! The quiz is complete, and you did an impressive job.</p>
             <p>Your score: <span id="points"></span></p>
             <button onclick="window.location.reload();">Play Again</button>

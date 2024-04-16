@@ -24,9 +24,34 @@ const quizQuestions = [
         prompt: "Who played the Joker in the 2008 movie 'The Dark Knight'?",
         choices: ["Heath Ledger", "Jack Nicholson", "Joaquin Phoenix", "Mark Hamill"],
         correctAnswer: 0
+    },
+    {
+        prompt: "What year was the original 'Jurassic Park' movie released?",
+        choices: ["1990", "1993", "1996", "1999"],
+        correctAnswer: 1
+    },
+    {
+        prompt: "Which actress played the leading role in the movie 'La La Land'?",
+        choices: ["Emma Stone", "Emma Watson", "Anne Hathaway", "Natalie Portman"],
+        correctAnswer: 0
+    },
+    {
+        prompt: "Which movie features the quote, 'I see dead people'?",
+        choices: ["The Sixth Sense", "Ghost", "Poltergeist", "Casper"],
+        correctAnswer: 0
+    },
+    {
+        prompt: "Which film did Tom Hanks NOT star in?",
+        choices: ["Cast Away", "Saving Private Ryan", "Forrest Gump", "Inception"],
+        correctAnswer: 3
+    },
+    {
+        prompt: "What is the name of the fictional country where 'Black Panther' is set?",
+        choices: ["Genovia", "Wakanda", "Elbonia", "Latveria"],
+        correctAnswer: 1
     }
+    
 ];
-
 // DOM elements
 const introElement = document.getElementById("startArea");
 const questionElement = document.getElementById("question");
@@ -42,9 +67,9 @@ const scoreDisplay = document.getElementById("value");
 const endGameContainer = document.getElementById("endGameDiv");
 const originalEndGameHTML = endGameDiv.innerHTML;
 
-const startButton = document.getElementById("startButton"); 
 let currentQuestionIndex = 0;
 let playerScore = 0;
+const startButton = document.getElementById("startQuiz");
 
 // Hide game and end game areas initially
 endGameContainer.style.display = "none";

@@ -1,7 +1,7 @@
 /* Root Variables: Define primary and text colors for easy theme management */
 :root {
     --accent-color: #e50914;
-    --text-color: #fff; 
+    --text-color: #000000; 
 }
 
 /* Global Styles: Applies a universal box model and default margin and padding */
@@ -14,11 +14,14 @@
 
 /* Body Styling: Sets up font, background, and basic layout properties */
 body {
-    font-family: 'Arial', sans-serif;
+    
+    font-family: 'Montserrat' , sans-serif;
+    font-size: 1.3em;
+    color: var(--text-color);
     background: url("../images/backgruond.jpg") no-repeat center center/cover;
     position: relative;
-    display: block;
-    flex-direction: column; /* Note: 'flex-direction' will not apply without 'display: flex' */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Reset Button Style: Fixes button's position on the screen */
@@ -34,7 +37,7 @@ body {
 header, section, footer {
     padding: 10px;
     text-align: center;
-    background-color: rgba(221, 206, 206, 0.8);
+    background-color: rgba(210, 216, 218, 0.8);
 }
 
 /* Link Styling: Ensures all links have consistent text decoration and color */
