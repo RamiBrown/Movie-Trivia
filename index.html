@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Head: Contains meta, links to CSS, and the title of the page -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,16 @@
     <title>Movies Trivia</title>
 </head>
 <body>
+    <!-- Header: Includes the main title and subtitle of the quiz, and a reset button -->
     <header>
         <h1><a id="quizTitle">Movies Trivia</a></h1>
         <p>Film Fanatic Challenge: Can You Ace Our Cinema Quiz?</p>
         <button id="resetButton" onclick="resetQuiz();">Reset Quiz</button>
-
     </header>
+
+    <!-- Main: Contains the content sections of the quiz -->
     <main>
+        <!-- Start Area: Displays the introductory text and start button -->
         <section id="startArea">
             <ol class="instructions">
                 <li>Click start when you're ready</li>
@@ -27,6 +31,8 @@
                 <button onclick="startQuiz();">Start Game</button>
             </div>
         </section>
+
+        <!-- Game Area: Hidden by default; shows questions and answers during the quiz -->
         <section id="gameArea" class="hidden">
             <div id="question"></div>
             <div class="center-answer">
@@ -37,6 +43,8 @@
             </div>
             <p id="score">Current Score: <span id="value">0</span></p>
         </section>
+
+        <!-- End Game Div: Hidden by default; shows results and options to replay or exit after the quiz ends -->
         <section id="endGameDiv" class="hidden">
             <p>Awesome work! The quiz is complete, and you did an impressive job.</p>
             <p>Your score: <span id="points"></span></p>
@@ -44,9 +52,13 @@
             <button onclick="byeBye();">Exit</button>
         </section>
     </main>
+
+    <!-- Footer: Contains copyright information -->
     <footer>
         <p>&copy; Movie Trivia by Rami Brown</p>
     </footer>
+
+    <!-- Script: Links to the JavaScript file that handles quiz functionality -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
