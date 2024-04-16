@@ -24,6 +24,11 @@ body {
     flex-direction: column;
 }
 
+ul,
+ol {
+    list-style-type: none;
+}
+
 /* Reset Button Style: Fixes button's position on the screen */
 #resetButton {
     position: fixed;
