@@ -4,9 +4,9 @@
 
 Welcome to the Movie Trivia Website, inspired by a love for films and quizzes. This project aims to provide a fun and interactive way to test your movie knowledge through a series of questions ranging from classics to new blockbusters. Whether you're a film buff or just looking for a fun way to pass time, this quiz is for you!
 
-Experience the quiz live here: [Movie Trivia Website](https://yourgithubusername.github.io/movie-trivia-website).
+Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.io/Movie-Trivia/).
 
-[Responsive Application Screenshot](../Movie-Trivia/assets/images/Quiz%20Interaction.jpg)
+[Responsive Application Screenshot](https://ui.dev/amiresponsive?url=https://ramibrown.github.io/Movie-Trivia/)
 
 ## Technologies Used
 
@@ -32,7 +32,7 @@ Experience the quiz live here: [Movie Trivia Website](https://yourgithubusername
 - **Score Tracking**: Scores are updated in real-time as users select their answers.
 - **End-of-Quiz Feedback**: Users receive feedback on their performance at the end of the quiz with options to retry or exit.
 
-![Quiz Interaction](assets\images\Quiz Interaction.jpg)
+![Quiz Interaction](../assets/images/Quiz-interaction.jpg)
 
 
 ### Color Palette
