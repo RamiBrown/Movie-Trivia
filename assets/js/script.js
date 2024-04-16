@@ -40,6 +40,8 @@ const scoreElement = document.getElementById("points");
 const quizContainer = document.getElementById("gameArea");
 const scoreDisplay = document.getElementById("value");
 const endGameContainer = document.getElementById("endGameDiv");
+const originalEndGameHTML = endGameDiv.innerHTML;
+
 const startButton = document.getElementById("startButton"); 
 let currentQuestionIndex = 0;
 let playerScore = 0;
@@ -83,6 +85,7 @@ function resetQuiz() {
     introElement.style.display = "block";
     endGameContainer.style.display = "none";
     quizContainer.style.display = "none";
+    endGameDiv.innerHTML = originalEndGameHTML;
 
     // Optionally reset the text of options and questions
     displayQuestionAndOptions(currentQuestionIndex);
@@ -121,25 +124,23 @@ function continueQuiz() {
     }
 }
 
-/**
- * Concludes the quiz and displays the end game area with the player's score.
- */
 function concludeQuiz() {
-    scoreElement.innerText = playerScore.toString();
+    scoreElement.innerText = playerScore.toString(); // Ensure score is updated
     quizContainer.style.display = "none";
     endGameContainer.style.display = "block";
+
+    // Update the endGameDiv content correctly every time
+    endGameDiv.innerHTML = `<p>Awesome work! The quiz is complete, and you did an impressive job.</p>
+                            <p>Your score: <span id="points">${playerScore}</span></p>
+                            <button onclick="window.location.reload();">Play Again</button>
+                            <button onclick="byeBye();">Exit</button>`;
 }
 
-/**
- * Displays a thank you message upon quiz completion.
- */
+/** Displaying goodbye message */
 function byeBye() {
-    // Hide the quiz and end game sections
+    introElement.style.display = "none";
     quizContainer.style.display = "none";
-    endGameContainer.style.display = "none";
-      }
-   
-    // Display a goodbye message on the webpage
-    endGameDiv.innerHTML = '<h1>Thank you for playing!</h1><p>We hope you enjoyed the quiz. Goodbye!</p>';
-
-    
+    endGameContainer.style.display = "block";
+    const endGameDiv = document.getElementById("endGameDiv");
+    endGameDiv.innerHTML = '<h1>Thank you for playing!</h1><p>We hope you enjoyed the quiz. Goodbye and we hope to see you again soon!</p>';
+}

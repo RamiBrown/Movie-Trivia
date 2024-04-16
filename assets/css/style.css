@@ -9,23 +9,25 @@
     border: none;
     box-sizing: border-box;
 }
-#resetButton {
-    position: flex;
-    top: 20px; 
-    right: 20px;
-    padding: 1%;
-    z-index: 10;
-
-}
 
 
 body {
     font-family: 'Arial', sans-serif;
     background: url("../images/backgruond.jpg") no-repeat center center/cover;
     position: relative;
-    display: fixed;
+    display: block;
     flex-direction: column;
 }
+
+#resetButton {
+    position: fixed;
+    top: 25px; 
+    right: 25px;
+    padding: 1%;
+    z-index: 10;
+
+}
+
 
 header, section, footer {
     padding: 10px;
@@ -53,6 +55,9 @@ button {
     display: none;
 }
 
+.visible {
+    display: block; 
+      }
 
 /* media queries */
 
