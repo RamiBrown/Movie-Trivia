@@ -2,26 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Trivia Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="../Online-Quiz/assets/images/favicon-32x32.png">
+    <title>Movies Trivia</title>
 </head>
 <body>
-    <div id="quizContainer">
-        <h1>Movie Trivia Quiz</h1>
-        <input type="text" id="username" placeholder="Enter your username" required>
-        <button id="startButton">Start Quiz</button>
-        <div id="questionContainer" class="hidden">
-            <div id="question"></div>
-            <img id="questionImage" src="assets\images\738x0w-30.jpg" alt="Question Image">
-            <div id="answerButtons" class="btn-grid">
-                <!-- Buttons will be added here dynamically -->
+    <header>
+        <h1><a id="quizTitle">Movies Trivia</a></h1>
+        <p>Film Fanatic Challenge: Can You Ace Our Cinema Quiz?</p>
+        <button id="resetButton" onclick="resetQuiz();">Reset Quiz</button>
+
+    </header>
+    <main>
+        <section id="startArea">
+            <ol class="instructions">
+                <li>Click start when you're ready</li>
+                <li>Answer the following Movies questions</li>
+                <li>See how many you get right!</li>
+                <li>Click the Reset button to reset the quiz</li>
+            </ol>
+            <div class="center">
+                <button onclick="startQuiz();">Start Game</button>
             </div>
-        </div>
-        <div id="result" class="hidden"></div>
-        <button id="nextButton" class="hidden">Next</button>
-    </div>
-    <script src="script.js"></script>
+        </section>
+        <section id="gameArea" class="hidden">
+            <div id="question"></div>
+            <div class="center-answer">
+                <button id="answer0" onclick="submitAnswer(0);"></button>
+                <button id="answer1" onclick="submitAnswer(1);"></button>
+                <button id="answer2" onclick="submitAnswer(2);"></button>
+                <button id="answer3" onclick="submitAnswer(3);"></button>
+            </div>
+            <p id="score">Current Score: <span id="value">0</span></p>
+        </section>
+        <section id="endGameDiv" class="hidden">
+            <p>Awesome work! The quiz is complete, and you did an impressive job.</p>
+            <p>Your score: <span id="points"></span></p>
+            <button onclick="window.location.reload();">Play Again</button>
+            <button onclick="byeBye();">Exit</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Movie Trivia</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
-

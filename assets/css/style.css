@@ -1,0 +1,103 @@
+:root {
+    --accent-color: #e50914; /* Netflix red for a cinematic feel */
+    --text-color: #fff; 
+}
+
+* {
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+#resetButton {
+    position: flex;
+    top: 20px; 
+    right: 20px;
+    padding: 1%;
+    z-index: 10;
+
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url("../images/backgruond.jpg") no-repeat center center/cover;
+    position: relative;
+    display: fixed;
+    flex-direction: column;
+}
+
+header, section, footer {
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(221, 206, 206, 0.8); /* Slight transparency to make text more readable */
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+button {
+    font-size: 1.5em;
+    border-radius: 222px;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: var(--accent-color);
+    color: rgb(246, 243, 243);
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 576px) {
+    #heading {
+        font-size: 1.85em;
+        }
+
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    .instructions {
+        font-size: 2em;
+        }
+
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 320px) {
+
+    #heading,
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .instructions,
+    #copyright {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 1em;
+        line-height: 2;
+    }
+
+    #question {
+        font-size: 1.3em;
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+    h2 {
+        font-size: 1.15em
+    }
+}

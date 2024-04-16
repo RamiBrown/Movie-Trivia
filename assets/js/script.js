@@ -1,101 +1,145 @@
-const startButton = document.getElementById('startButton');
-const nextButton = document.getElementById('nextButton');
-const questionContainerElement = document.getElementById('questionContainer');
-const questionElement = document.getElementById('question');
-const questionImage = document.getElementById('questionImage');
-const answerButtonsElement = document.getElementById('answerButtons');
-const resultElement = document.getElementById('result');
-let shuffledQuestions, currentQuestionIndex;
-let score = 0;
-
-const questions = [
+// Array of quiz questions
+const quizQuestions = [
     {
-        question: "Who directed the movie 'Inception'?",
-        answers: [
-            { text: "Christopher Nolan", correct: true },
-            { text: "Steven Spielberg", correct: false },
-            { text: "Martin Scorsese", correct: false },
-            { text: "Quentin Tarantino", correct: false }
-        ],
-        image: "images/inception.jpg"
+        prompt: "Who directed the movie 'Inception'?",
+        choices: ["Steven Spielberg", "Christopher Nolan", "Martin Scorsese", "James Cameron"],
+        correctAnswer: 1
     },
     {
-        question: "What year was 'The Godfather' released?",
-        answers: [
-            { text: "1972", correct: true },
-            { text: "1968", correct: false },
-            { text: "1979", correct: false },
-            { text: "1980", correct: false }
-        ],
-        image: "images/godfather.jpg"
+        prompt: "Which movie features the character Jack Dawson?",
+        choices: ["The Great Gatsby", "Catch Me If You Can", "Titanic", "Inception"],
+        correctAnswer: 2
+    },
+    {
+        prompt: "What is the highest-grossing film of all time?",
+        choices: ["Avatar", "Titanic", "Avengers: Endgame", "Star Wars: The Force Awakens"],
+        correctAnswer: 0
+    },
+    {
+        prompt: "Which film won the Best Picture Oscar in 1994?",
+        choices: ["Pulp Fiction", "Forrest Gump", "The Shawshank Redemption", "Jurassic Park"],
+        correctAnswer: 1
+    },
+    {
+        prompt: "Who played the Joker in the 2008 movie 'The Dark Knight'?",
+        choices: ["Heath Ledger", "Jack Nicholson", "Joaquin Phoenix", "Mark Hamill"],
+        correctAnswer: 0
     }
 ];
 
-startButton.addEventListener('click', startGame);
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    setNextQuestion();
-});
+// DOM elements
+const introElement = document.getElementById("startArea");
+const questionElement = document.getElementById("question");
+const optionsElements = [
+    document.getElementById("answer0"),
+    document.getElementById("answer1"),
+    document.getElementById("answer2"),
+    document.getElementById("answer3")
+];
+const scoreElement = document.getElementById("points");
+const quizContainer = document.getElementById("gameArea");
+const scoreDisplay = document.getElementById("value");
+const endGameContainer = document.getElementById("endGameDiv");
+const startButton = document.getElementById("startButton"); 
+let currentQuestionIndex = 0;
+let playerScore = 0;
 
-function startGame() {
-    startButton.classList.add('hidden');
-    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+// Hide game and end game areas initially
+endGameContainer.style.display = "none";
+quizContainer.style.display = "none";
+
+
+
+// Event listener for the start button
+startButton.addEventListener('click', startQuiz);
+
+/**
+ * Initiates the quiz game, hiding the intro and displaying the quiz area.
+ */
+function startQuiz() {
+    introElement.style.display = "none";
+    quizContainer.style.display = "block";
+    continueQuiz();
+}
+
+/**
+ * Updates the displayed score.
+ */
+function updateScoreDisplay() {
+    scoreDisplay.innerText = playerScore.toString();
+}
+
+
+/**
+ * Resets the quiz to the beginning.
+ */
+function resetQuiz() {
+    // Reset quiz variables
     currentQuestionIndex = 0;
-    questionContainerElement.classList.remove('hidden');
-    setNextQuestion();
-    score = 0;
+    playerScore = 0;
+    updateScoreDisplay();
+
+    // Reset display elements
+    introElement.style.display = "block";
+    endGameContainer.style.display = "none";
+    quizContainer.style.display = "none";
+
+    // Optionally reset the text of options and questions
+    displayQuestionAndOptions(currentQuestionIndex);
 }
 
-function setNextQuestion() {
-    resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-}
-
-function showQuestion(question) {
-    questionElement.innerText = question.question;
-    questionImage.src = question.image;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
+/**
+ * Loads the question and its options based on the current index.
+ */
+function displayQuestionAndOptions(index) {
+    questionElement.innerText = quizQuestions[index].prompt;
+    optionsElements.forEach((element, idx) => {
+        element.innerText = quizQuestions[index].choices[idx];
     });
 }
 
-function resetState() {
-    nextButton.classList.add('hidden');
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+/**
+ * Validates the player's selected choice and updates the score.
+ */
+function submitAnswer(selectedChoice) {
+    if (selectedChoice === quizQuestions[currentQuestionIndex].correctAnswer) {
+        playerScore++;
+        updateScoreDisplay();
+    }
+    currentQuestionIndex++;
+    continueQuiz();
+}
+
+/**
+ * Continues the quiz until all questions are answered, then ends the game.
+ */
+function continueQuiz() {
+    if (currentQuestionIndex < quizQuestions.length) {
+        displayQuestionAndOptions(currentQuestionIndex);
+    } else {
+        concludeQuiz();
     }
 }
 
-function selectAnswer(e) {
-    const selectedButton = e.target;
-    const correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    });
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hidden');
-    } else {
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hidden');
-        resultElement.innerText = `Quiz completed. Your score: ${score}`;
-        resultElement.classList.remove('hidden');
-    }
-    if (correct) {
-        score++;
-    }
+/**
+ * Concludes the quiz and displays the end game area with the player's score.
+ */
+function concludeQuiz() {
+    scoreElement.innerText = playerScore.toString();
+    quizContainer.style.display = "none";
+    endGameContainer.style.display = "block";
 }
 
-function setStatusClass(element, correct) {
-    if (correct) {
-        element.classList.add('correct');
-    } else {
-        element.classList.add('wrong');
-    }
+/**
+ * Displays a thank you message upon quiz completion.
+ */
+function byeBye() {
+    // Hide the quiz and end game sections
+    quizContainer.style.display = "none";
+    endGameContainer.style.display = "none";
+      }
+   
+    // Display a goodbye message on the webpage
+    endGameDiv.innerHTML = '<h1>Thank you for playing!</h1><p>We hope you enjoyed the quiz. Goodbye!</p>';
+
+    
