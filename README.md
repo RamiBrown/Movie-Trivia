@@ -34,7 +34,7 @@ Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.i
 
 ![Quiz Interaction](assets\images\Quiz-Interaction.jpg)
 ![Quiz Questions](assets\images\Quiz-Questions.png)
-![Quiz Results](assets\images\Quiz-Results.png)    
+![Quiz Results](assets/images/Quiz-Results.png)    
 
 
 
