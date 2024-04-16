@@ -6,7 +6,7 @@ Welcome to the Movie Trivia Website, inspired by a love for films and quizzes. T
 
 Experience the quiz live here: [Movie Trivia Website](https://yourgithubusername.github.io/movie-trivia-website).
 
-![Responsive Application Screenshot](assets\images\Quiz Interaction.jpg)
+[Responsive Application Screenshot](assets\images\Quiz Interaction.jpg)
 
 ## Technologies Used
 
