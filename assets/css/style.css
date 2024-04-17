@@ -1,12 +1,12 @@
 /* Root Variables: Define primary and text colors for easy theme management */
 :root {
     --accent-color: #e50914;
-    --text-color: #000000; 
+    --text-color: #000000;
 }
 
 /* Global Styles: Applies a universal box model and default margin and padding */
 * {
-    margin: 0; 
+    margin: 0;
     padding: 5px;
     border: none;
     box-sizing: border-box;
@@ -17,7 +17,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3em;
     color: var(--text-color);
-    background: url("../images/background.jpg") no-repeat center center fixed; 
+    background: url("../images/background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -25,7 +25,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 100vh 
+    min-height: 100vh
 }
 
 /* Main content wrapper */
@@ -40,7 +40,8 @@ body {
 }
 
 
-ul, ol {
+ul,
+ol {
     list-style-type: none;
 }
 
@@ -56,11 +57,13 @@ ul, ol {
     color: rgb(246, 243, 243);
     border: none;
     border-radius: 222px;
-    
+
 }
 
 /* Common Container Styling: Applies to header, section, and footer */
-header, section, footer {
+header,
+section,
+footer {
     position: relative;
     padding: 10px;
     margin: 13px;
@@ -68,7 +71,7 @@ header, section, footer {
     border-radius: 10px;
     box-shadow: 0 0 5px 5px rgba(32, 57, 65, 0.8);
     text-align: center;
-    
+
 }
 
 /* Footer specific styling */
@@ -117,7 +120,7 @@ button {
     h2 {
         font-size: 1.3em;
     }
-    
+
     .instructions {
         font-size: 2em;
     }
@@ -125,11 +128,14 @@ button {
 
 /* Further Responsive Adjustments for very small screens */
 @media screen and (max-width: 320px) {
-    #heading, h2 {
+
+    #heading,
+    h2 {
         font-size: 1.4em;
     }
 
-    .instructions, #copyright {
+    .instructions,
+    #copyright {
         font-size: 0.9em;
     }
 

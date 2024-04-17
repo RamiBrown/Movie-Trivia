@@ -50,7 +50,7 @@ const quizQuestions = [
         choices: ["Genovia", "Wakanda", "Elbonia", "Latveria"],
         correctAnswer: 1
     }
-    
+
 ];
 // DOM elements
 const introElement = document.getElementById("startArea");
@@ -66,19 +66,21 @@ const quizContainer = document.getElementById("gameArea");
 const scoreDisplay = document.getElementById("value");
 const endGameContainer = document.getElementById("endGameDiv");
 const originalEndGameHTML = endGameDiv.innerHTML;
-
 let currentQuestionIndex = 0;
 let playerScore = 0;
-const startButton = document.getElementById("startQuiz");
+document.addEventListener('DOMContentLoaded', function () {
+    const startButton = document.getElementById('startQuiz');
+    if (startButton) {
+        startButton.addEventListener('click', startQuiz);
+    } else {
+        console.error('Start button not found');
+    }
+});
 
 // Hide game and end game areas initially
 endGameContainer.style.display = "none";
 quizContainer.style.display = "none";
 
-
-
-// Event listener for the start button
-startButton.addEventListener('click', startQuiz);
 
 /**
  * Initiates the quiz game, hiding the intro and displaying the quiz area.
@@ -96,7 +98,6 @@ function startQuiz() {
 function updateScoreDisplay() {
     scoreDisplay.innerText = playerScore.toString();
 }
-
 
 /**
  * Resets the quiz to the beginning.
@@ -116,7 +117,6 @@ function resetQuiz() {
     // Optionally reset the text of options and questions
     displayQuestionAndOptions(currentQuestionIndex);
 }
-
 /**
  * Loads the question and its options based on the current index.
  */
@@ -151,7 +151,7 @@ function continueQuiz() {
 }
 
 function concludeQuiz() {
-    scoreElement.innerText = playerScore.toString(); // Ensure score is updated
+    scoreElement.innerText = playerScore.toString();
     quizContainer.style.display = "none";
     endGameContainer.style.display = "block";
 
