@@ -84,11 +84,12 @@ startButton.addEventListener('click', startQuiz);
  * Initiates the quiz game, hiding the intro and displaying the quiz area.
  */
 function startQuiz() {
+    // Randomize the order of quiz questions
+    quizQuestions.sort(() => Math.random() - 0.5);
     introElement.style.display = "none";
     quizContainer.style.display = "block";
     continueQuiz();
 }
-
 /**
  * Updates the displayed score.
  */
