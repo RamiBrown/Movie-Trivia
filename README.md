@@ -56,7 +56,7 @@ Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.i
 
 - **Lighthouse report**
 
-![Lighthouse Report](assets/images/ighthouse-Report.jpg)
+![Lighthouse Report](assets/images/ighthouse-Report.png)
 ![Lighthouse Report](assets/images/ighthouse-Report2.png)
 - Peer Code Review through GitHub to gather feedback and make improvements.
 - Functional testing was conducted by friends and family to ensure the quiz works seamlessly on various devices and browsers.
