@@ -71,7 +71,9 @@ Experience the quiz live here: [Movie Trivia Website](https://ramibrown.github.i
 
 ## Credits
 
-- **Community Forums**: Valuable insights were gained from discussions on Stack Overflow.
+- **Community Forums**: Valuable insights were gained from discussions on Slack and other online communities.
+- **Icons provided** by [Font Awesome](https://fontawesome.com). Font Awesome offers a comprehensive collection of icons and tools to  enhance user interface and web design.
+
 
 ## Future Enhancements
 
